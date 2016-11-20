@@ -11,6 +11,7 @@ public class termProject {
 	static Point [] P;
 	static int numberOftriangle = 0;
 	public static void main(String[] args) {
+		
 		readPointSetFile("./dat/random_pointset_origin_coordinate_1000.dat");
 		P=m_inputPoints;
 		for(int i = 0 ; i <m_numberOfInputPoints ; i ++){
@@ -29,6 +30,7 @@ public class termProject {
 				}
 			}
 		}
+		
 		/*
 		for(int i = 0 ; i <m_numberOfInputPoints ; i ++){
 			for(int j=i+1 ; j<m_numberOfInputPoints ; j++){
@@ -43,10 +45,10 @@ public class termProject {
 						{
 							if(nY>=minY && nY<=maxY)
 							{
-								/*
-								 * 만약 점이  점i,j,k의 minimum Y값과 maximum Y값 사이에 있다면 연산을 진행한다. 
-								 */
-		/*
+								
+								//  만약 점이  점i,j,k의 minimum Y값과 maximum Y값 사이에 있다면 연산을 진행한다. 
+								 
+		
 								double x1_Of_n = (P[n].getY()-P[i].getY())*(P[j].getX()-P[i].getX())/(P[j].getY()-P[i].getY())+P[i].getX();
 								double x2_Of_n = (P[n].getY()-P[j].getY())*(P[k].getX()-P[j].getX())/(P[k].getY()-P[j].getY())+P[j].getX();
 								double x3_Of_n = (P[n].getY()-P[k].getY())*(P[i].getX()-P[k].getX())/(P[i].getY()-P[k].getY())+P[k].getX();
@@ -87,6 +89,7 @@ public class termProject {
 			}
 		}// 1-1 brute force
 		*/
+		
 		AngleOftwopoints angleOfpoint[][] = new AngleOftwopoints[m_numberOfInputPoints][m_numberOfInputPoints-1];
 		for(int i = 0 ; i<m_numberOfInputPoints ; i++)
 		{
@@ -111,6 +114,7 @@ public class termProject {
 			}//Point i에 존재하는 각을 전부 계산.
 		}	
 		System.out.println("End");
+		
 	}
 
     public static void readPointSetFile(String fileName) {
@@ -146,9 +150,12 @@ public class termProject {
         }
     }	
 
-    public static void sortHeap(AngleOftwopoints[][] angleOfpoint)
+    public static void swapAngleOftwopoints(AngleOftwopoints[][] angleOfpoint, int index1,int index2,int fibot)
     {
-    	
+    	AngleOftwopoints temp = new AngleOftwopoints();
+    	temp = angleOfpoint[fibot][index1];
+    	angleOfpoint[fibot][index1] = angleOfpoint[fibot][index2]; 
+    	angleOfpoint[fibot][index2] = temp;
     }
 	
 }
