@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
+/*is it work? */
 public class termProject {
 	static int m_numberOfInputPoints;
 	static Point [] m_inputPoints;
