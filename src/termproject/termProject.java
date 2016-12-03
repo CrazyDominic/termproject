@@ -149,13 +149,31 @@ public class termProject {
             }
         }
     }	
-
+    
     public static void swapAngleOftwopoints(AngleOftwopoints[][] angleOfpoint, int index1,int index2,int fibot)
     {
     	AngleOftwopoints temp = new AngleOftwopoints();
     	temp = angleOfpoint[fibot][index1];
     	angleOfpoint[fibot][index1] = angleOfpoint[fibot][index2]; 
     	angleOfpoint[fibot][index2] = temp;
+    }
+    
+    public static void buildHeap(AngleOftwopoints[][] angleOfpoint, int fibot){
+    	for(int i =(int)(Math.floor(angleOfpoint.length * 0.5)-1); i>=0 ; --i)
+    	{
+    		int parent = i ;
+    		while(true)
+    		{
+    			int leftchild = parent * 2 +1;
+    			int rightchild = leftchild + 1;
+    			
+    			int changeIndex = parent;
+    			if(leftchild < angleOfpoint.length && angleOfpoint[fibot][leftchild].getAngle() < angleOfpoint[fibot][parent].getAngle())
+    			{
+    				
+    			}
+    		}
+    	}
     }
 	
 }
