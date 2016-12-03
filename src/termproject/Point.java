@@ -1,6 +1,6 @@
 package termproject;
 
-class Point {
+public class Point {
     // fields
     private double m_xCoordinate;
     private double m_yCoordinate;
@@ -72,8 +72,8 @@ class Point {
     
     
     public double distance(Point point) {
-        double xDiff = m_xCoordinate - point.m_xCoordinate;
-        double yDiff = m_yCoordinate - point.m_yCoordinate;
+        double xDiff = this.m_xCoordinate - point.m_xCoordinate;
+        double yDiff = this.m_yCoordinate - point.m_yCoordinate;
         return Math.sqrt(xDiff*xDiff + yDiff*yDiff);
     }
 }
