@@ -22,6 +22,7 @@ public class program2 {
 			System.out.println("n : "+ n);
 			for(int i = 0 ; i < triangleset.size(); i++)
 			{
+				//외적판별식 넣기
 				if(triangleset.get(i).hasVertex(Points[n])==false)
 				{
 					if(triangleset.get(i).containCricle(Points[n])==true)
